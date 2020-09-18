@@ -19,10 +19,13 @@
     </properties>
 
     <dependencies>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-mongodb</artifactId>
+            <version>2.3.3.RELEASE</version>
         </dependency>
+
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -49,7 +52,7 @@
             </exclusions>
         </dependency>
 
-        <dependency>
+    <!--    <dependency>
             <groupId>org.powermock</groupId>
             <artifactId>powermock-module-junit4</artifactId>
             <version>2.0.7</version>
@@ -62,20 +65,20 @@
             <version>2.0.7</version>
             <scope>test</scope>
         </dependency>
-
-        <dependency>
+-->
+     <!--  <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-test</artifactId>
             <version>5.2.4.RELEASE</version>
-            <scope>test</scope>
+            <scope>test</scope>&ndash;&gt;
 
-        </dependency>
+        </dependency>-->
 
-        <dependency>
+      <!--  <dependency>
             <groupId>org.aspectj</groupId>
             <artifactId>aspectjweaver</artifactId>
             <version>1.9.2</version>
-        </dependency>
+        </dependency>-->
 
         <dependency>
             <groupId>org.hibernate</groupId>
@@ -89,23 +92,23 @@
             <version>6.1.2.Final</version>
         </dependency>
 
-        <dependency>
+        <!--<dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-webmvc</artifactId>
             <version>5.2.5.RELEASE</version>
         </dependency>
 
-        <dependency>
+        &lt;!&ndash;<dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-aop</artifactId>
             <version>5.2.5.RELEASE</version>
-        </dependency>
-
+        </dependency>&ndash;&gt;-->
+<!--
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context-support</artifactId>
             <version>5.2.5.RELEASE</version>
-        </dependency>
+        </dependency>-->
 
         <dependency>
             <groupId>javax.mail</groupId>
@@ -113,7 +116,7 @@
             <version>1.4.7</version>
         </dependency>
 
-        <dependency>
+        <!--<dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-orm</artifactId>
             <version>5.2.5.RELEASE</version>
@@ -129,16 +132,16 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
             <version>5.2.5.RELEASE</version>
-        </dependency>
+        </dependency>-->
 
-        <dependency>
+       <!-- <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
-            <version>4.0.1</version>
+            <version>3.1.0</version>
             <scope>compile</scope>
-        </dependency>
+        </dependency>-->
 
-        <dependency>
+      <!--  <dependency>
             <groupId>com.fasterxml.jackson.datatype</groupId>
             <artifactId>jackson-datatype-jsr310</artifactId>
             <version>2.10.3</version>
@@ -181,26 +184,8 @@
             <artifactId>javax.el</artifactId>
             <version>3.0.0</version>
         </dependency>
-
-        <dependency>
-            <groupId>org.springframework.security</groupId>
-            <artifactId>spring-security-core</artifactId>
-            <version>5.3.4.RELEASE</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.security</groupId>
-            <artifactId>spring-security-web</artifactId>
-            <version>5.3.4.RELEASE</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.security</groupId>
-            <artifactId>spring-security-config</artifactId>
-            <version>5.3.4.RELEASE</version>
-        </dependency>
-
-        <dependency>
+-->
+        <!--<dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-tx</artifactId>
             <version>5.2.5.RELEASE</version>
@@ -210,30 +195,39 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-expression</artifactId>
             <version>5.2.5.RELEASE</version>
-        </dependency>
+        </dependency>-->
 
-        <dependency>
+      <!--  <dependency>
             <groupId>org.mongodb</groupId>
             <artifactId>mongo-java-driver</artifactId>
-            <version>3.12.7</version>
-        </dependency>
+            <version>3.12.2</version>
+        </dependency>-->
 
-        <dependency>
-            <groupId>org.hibernate.ogm</groupId>
-            <artifactId>hibernate-ogm-mongodb</artifactId>
-            <version>5.4.0.Final</version>
-        </dependency>
 
-        <dependency>
-            <groupId>org.jboss.narayana.jta</groupId>
-            <artifactId>narayana-jta</artifactId>
-            <version>5.9.2.Final</version>
-        </dependency>
+        <!-- <dependency>
+             <groupId>org.hibernate.ogm</groupId>
+             <artifactId>hibernate-ogm-mongodb</artifactId>
+             <version>5.4.0.Final</version>
+         </dependency>
+
+         <dependency>
+             <groupId>org.jboss.narayana.jta</groupId>
+             <artifactId>narayana-jta</artifactId>
+             <version>5.9.2.Final</version>
+         </dependency>-->
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+            <version>2.3.3.RELEASE</version>
         </dependency>
+
+
+        <!--  <dependency>
+              <groupId>org.springframework.boot</groupId>
+              <artifactId>spring-boot-starter-jersey</artifactId>
+              <version>2.3.2.RELEASE</version>
+          </dependency>-->
 
 
     </dependencies>
