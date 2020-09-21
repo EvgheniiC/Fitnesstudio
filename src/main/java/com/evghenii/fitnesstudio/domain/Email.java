@@ -1,5 +1,6 @@
 package com.evghenii.fitnesstudio.domain;
 
+import lombok.Data;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import javax.persistence.*;
@@ -8,6 +9,7 @@ import javax.validation.constraints.NotNull;
 import java.util.Objects;
 
 @Document
+@Data
 public class Email {
 
     @Id
@@ -27,49 +29,8 @@ public class Email {
     @JoinColumn(name = "person_fk_id")
     private Person person;
 
-
     @Version
     private int version;
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public FitnessClub getFitnessClub() {
-        return fitnessClub;
-    }
-
-    public void setFitnessClub(FitnessClub fitnessClub) {
-        this.fitnessClub = fitnessClub;
-    }
-
-    public int getVersion() {
-        return version;
-    }
-
-    public void setVersion(int version) {
-        this.version = version;
-    }
-
-    public Person getPerson() {
-        return person;
-    }
-
-    public void setPerson(Person person) {
-        this.person = person;
-    }
 
     public Email() {
     }

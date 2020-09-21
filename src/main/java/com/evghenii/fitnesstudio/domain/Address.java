@@ -1,5 +1,6 @@
 package com.evghenii.fitnesstudio.domain;
 
+import lombok.Data;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import javax.persistence.*;
@@ -7,6 +8,7 @@ import javax.validation.constraints.Positive;
 import java.util.Objects;
 
 @Document
+@Data
 public class Address {
 
     @Id
@@ -29,62 +31,6 @@ public class Address {
 
     @Version
     private int version;
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getCity() {
-        return city;
-    }
-
-    public void setCity(String city) {
-        this.city = city;
-    }
-
-    public String getStreet() {
-        return street;
-    }
-
-    public void setStreet(String street) {
-        this.street = street;
-    }
-
-    public int getHausNummer() {
-        return hausNummer;
-    }
-
-    public void setHausNummer(int hausNummer) {
-        this.hausNummer = hausNummer;
-    }
-
-    public FitnessClub getFitnessClub() {
-        return fitnessClub;
-    }
-
-    public void setFitnessClub(FitnessClub fitnessClub) {
-        this.fitnessClub = fitnessClub;
-    }
-
-    public int getVersion() {
-        return version;
-    }
-
-    public void setVersion(int version) {
-        this.version = version;
-    }
-
-    public Person getPerson() {
-        return person;
-    }
-
-    public void setPerson(Person person) {
-        this.person = person;
-    }
 
     public Address() {
     }

@@ -1,5 +1,6 @@
 package com.evghenii.fitnesstudio.domain;
 
+import lombok.Data;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import javax.persistence.*;
@@ -8,6 +9,7 @@ import java.util.Objects;
 import java.util.Set;
 
 @Document
+@Data
 public class FitnessClub {
 
     @Id
@@ -38,78 +40,6 @@ public class FitnessClub {
 
     @Version
     private int version;
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public boolean isRoundTheClockWork() {
-        return isRoundTheClockWork;
-    }
-
-    public void setRoundTheClockWork(boolean roundTheClockWork) {
-        isRoundTheClockWork = roundTheClockWork;
-    }
-
-    public Address getAddress() {
-        return address;
-    }
-
-    public void setAddress(Address address) {
-        this.address = address;
-    }
-
-    public Set<Phone> getPhones() {
-        return phones;
-    }
-
-    public void setPhones(Set<Phone> phones) {
-        this.phones = phones;
-    }
-
-    public Set<Email> getEmails() {
-        return emails;
-    }
-
-    public void setEmails(Set<Email> emails) {
-        this.emails = emails;
-    }
-
-    public Program getProgram() {
-        return program;
-    }
-
-    public void setProgram(Program program) {
-        this.program = program;
-    }
-
-    public Gum getGum() {
-        return gum;
-    }
-
-    public void setGum(Gum gum) {
-        this.gum = gum;
-    }
-
-    public int getVersion() {
-        return version;
-    }
-
-    public void setVersion(int version) {
-        this.version = version;
-    }
 
     public FitnessClub() {
     }

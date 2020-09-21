@@ -1,5 +1,6 @@
 package com.evghenii.fitnesstudio.domain;
 
+import lombok.Data;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import javax.persistence.*;
@@ -8,6 +9,7 @@ import java.util.Objects;
 import java.util.Set;
 
 @Document
+@Data
 public class Trainer {
 
     @Id
@@ -27,54 +29,6 @@ public class Trainer {
 
     @Version
     private int version;
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-    public int getNumberOfProgram() {
-        return numberOfProgram;
-    }
-
-    public void setNumberOfProgram(int numberOfProgram) {
-        this.numberOfProgram = numberOfProgram;
-    }
-
-    public Set<Person> getPersonSet() {
-        return personSet;
-    }
-
-    public void setPersonSet(Set<Person> personSet) {
-        this.personSet = personSet;
-    }
-
-    public int getVersion() {
-        return version;
-    }
-
-    public void setVersion(int version) {
-        this.version = version;
-    }
 
     public Trainer() {
     }

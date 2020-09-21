@@ -1,6 +1,7 @@
 package com.evghenii.fitnesstudio.domain;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import lombok.Data;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import javax.persistence.*;
@@ -10,6 +11,7 @@ import java.util.Objects;
 import java.util.Set;
 
 @Document
+@Data
 public class Person {
 
     @Id
@@ -58,126 +60,6 @@ public class Person {
     @OneToOne(optional = false, cascade = {CascadeType.PERSIST, CascadeType.REMOVE, CascadeType.MERGE})
     @JoinColumn(name = "address_fk_id")
     private Address address;
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-    public int getHeight() {
-        return height;
-    }
-
-    public void setHeight(int height) {
-        this.height = height;
-    }
-
-    public double getWeightActual() {
-        return weightActual;
-    }
-
-    public void setWeightActual(double weightActual) {
-        this.weightActual = weightActual;
-    }
-
-    public double getWeightDesired() {
-        return weightDesired;
-    }
-
-    public void setWeightDesired(double weightDesired) {
-        this.weightDesired = weightDesired;
-    }
-
-    public LocalDate getFirstDayOfTraining() {
-        return firstDayOfTraining;
-    }
-
-    public void setFirstDayOfTraining(LocalDate firstDayOfTraining) {
-        this.firstDayOfTraining = firstDayOfTraining;
-    }
-
-    public LocalDate getLastDayOfTraining() {
-        return lastDayOfTraining;
-    }
-
-    public void setLastDayOfTraining(LocalDate lastDayOfTraining) {
-        this.lastDayOfTraining = lastDayOfTraining;
-    }
-
-    public Trainer getTrainer() {
-        return trainer;
-    }
-
-    public void setTrainer(Trainer trainer) {
-        this.trainer = trainer;
-    }
-
-    public int getVersion() {
-        return version;
-    }
-
-    public void setVersion(int version) {
-        this.version = version;
-    }
-
-    public Set<Program> getProgramSet() {
-        return programSet;
-    }
-
-    public void setProgramSet(Set<Program> programSet) {
-        this.programSet = programSet;
-    }
-
-    public FitnessClub getFitnessClub() {
-        return fitnessClub;
-    }
-
-    public void setFitnessClub(FitnessClub fitnessClub) {
-        this.fitnessClub = fitnessClub;
-    }
-
-    public Set<Phone> getPhones() {
-        return phones;
-    }
-
-    public void setPhones(Set<Phone> phones) {
-        this.phones = phones;
-    }
-
-    public Set<Email> getEmails() {
-        return emails;
-    }
-
-    public void setEmails(Set<Email> emails) {
-        this.emails = emails;
-    }
-
-    public Address getAddress() {
-        return address;
-    }
-
-    public void setAddress(Address address) {
-        this.address = address;
-    }
 
     public Person() {
     }

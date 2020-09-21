@@ -1,6 +1,7 @@
 package com.evghenii.fitnesstudio.domain;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import lombok.Data;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import javax.persistence.*;
@@ -8,6 +9,7 @@ import java.time.LocalDate;
 import java.util.Objects;
 
 @Document
+@Data
 public class StatisticPerson {
 
     @Id
@@ -25,46 +27,6 @@ public class StatisticPerson {
     @ManyToOne(optional = false)
     @JoinColumn(name = "person_fk_id")
     private Person person;
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public double getActualWeight() {
-        return actualWeight;
-    }
-
-    public void setActualWeight(double actualWeight) {
-        this.actualWeight = actualWeight;
-    }
-
-    public LocalDate getVisitByDate() {
-        return visitByDate;
-    }
-
-    public void setVisitByDate(LocalDate visitByDate) {
-        this.visitByDate = visitByDate;
-    }
-
-    public int getCountOfVisits() {
-        return countOfVisits;
-    }
-
-    public void setCountOfVisits(int countOfVisits) {
-        this.countOfVisits = countOfVisits;
-    }
-
-    public Person getPerson() {
-        return person;
-    }
-
-    public void setPerson(Person person) {
-        this.person = person;
-    }
 
     public StatisticPerson() {
     }

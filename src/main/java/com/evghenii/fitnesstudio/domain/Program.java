@@ -1,5 +1,6 @@
 package com.evghenii.fitnesstudio.domain;
 
+import lombok.Data;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import javax.persistence.*;
@@ -7,6 +8,7 @@ import java.math.BigDecimal;
 import java.util.Objects;
 
 @Document
+@Data
 public class Program {
 
     @Id
@@ -32,78 +34,6 @@ public class Program {
 
     @Version
     private int version;
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public BigDecimal getPrice() {
-        return price;
-    }
-
-    public void setPrice(BigDecimal price) {
-        this.price = price;
-    }
-
-    public int getNumberOfVisitPerWeek() {
-        return numberOfVisitPerWeek;
-    }
-
-    public void setNumberOfVisitPerWeek(int numberOfVisitPerWeek) {
-        this.numberOfVisitPerWeek = numberOfVisitPerWeek;
-    }
-
-    public double getCaloriesBurned() {
-        return caloriesBurned;
-    }
-
-    public void setCaloriesBurned(double caloriesBurned) {
-        this.caloriesBurned = caloriesBurned;
-    }
-
-    public FitnessClub getFitnessClub() {
-        return fitnessClub;
-    }
-
-    public void setFitnessClub(FitnessClub fitnessClub) {
-        this.fitnessClub = fitnessClub;
-    }
-
-    public KindOfProgram getKindOfProgram() {
-        return kindOfProgram;
-    }
-
-    public void setKindOfProgram(KindOfProgram kindOfProgram) {
-        this.kindOfProgram = kindOfProgram;
-    }
-
-    public ProgramType getProgramType() {
-        return programType;
-    }
-
-    public void setProgramType(ProgramType programType) {
-        this.programType = programType;
-    }
-
-    public int getVersion() {
-        return version;
-    }
-
-    public void setVersion(int version) {
-        this.version = version;
-    }
 
     public Program() {
     }

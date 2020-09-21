@@ -1,11 +1,13 @@
 package com.evghenii.fitnesstudio.domain;
 
+import lombok.Data;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import javax.persistence.*;
 import java.util.Objects;
 
 @Document
+@Data
 public class Phone {
 
     @Id
@@ -26,46 +28,6 @@ public class Phone {
     @ManyToOne(optional = false)
     @JoinColumn(name = "person_fk_id")
     private Person person;
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
-
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
-    }
-
-    public int getVersion() {
-        return version;
-    }
-
-    public void setVersion(int version) {
-        this.version = version;
-    }
-
-    public FitnessClub getFitnessClub() {
-        return fitnessClub;
-    }
-
-    public void setFitnessClub(FitnessClub fitnessClub) {
-        this.fitnessClub = fitnessClub;
-    }
-
-    public Person getPerson() {
-        return person;
-    }
-
-    public void setPerson(Person person) {
-        this.person = person;
-    }
 
     public Phone() {
     }
