@@ -32,42 +32,4 @@ public class Trainer {
 
     public Trainer() {
     }
-
-    public Trainer(String name, int age, int numberOfProgram, Set<Person> personSet, int version) {
-        this.name = name;
-        this.age = age;
-        this.numberOfProgram = numberOfProgram;
-        this.personSet = personSet;
-        this.version = version;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Trainer trainer = (Trainer) o;
-        return id == trainer.id &&
-                age == trainer.age &&
-                numberOfProgram == trainer.numberOfProgram &&
-                version == trainer.version &&
-                Objects.equals(name, trainer.name) &&
-                Objects.equals(personSet, trainer.personSet);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, name, age, numberOfProgram, personSet, version);
-    }
-
-    @Override
-    public String toString() {
-        return "Trainer{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", age=" + age +
-                ", numberOfProgram=" + numberOfProgram +
-                ", personSet=" + personSet +
-                ", version=" + version +
-                '}';
-    }
 }

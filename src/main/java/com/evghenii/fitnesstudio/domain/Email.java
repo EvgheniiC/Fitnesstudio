@@ -35,31 +35,4 @@ public class Email {
     public Email() {
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Email email1 = (Email) o;
-        return id == email1.id &&
-                version == email1.version &&
-                Objects.equals(email, email1.email) &&
-                Objects.equals(fitnessClub, email1.fitnessClub) &&
-                Objects.equals(person, email1.person);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, email, fitnessClub, person, version);
-    }
-
-    @Override
-    public String toString() {
-        return "Email{" +
-                "id=" + id +
-                ", email='" + email + '\'' +
-                ", fitnessClub=" + fitnessClub +
-                ", person=" + person +
-                ", version=" + version +
-                '}';
-    }
 }

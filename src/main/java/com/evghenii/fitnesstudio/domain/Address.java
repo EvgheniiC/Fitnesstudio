@@ -35,35 +35,4 @@ public class Address {
     public Address() {
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Address address = (Address) o;
-        return id == address.id &&
-                hausNummer == address.hausNummer &&
-                version == address.version &&
-                Objects.equals(city, address.city) &&
-                Objects.equals(street, address.street) &&
-                Objects.equals(fitnessClub, address.fitnessClub) &&
-                Objects.equals(person, address.person);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, city, street, hausNummer, fitnessClub, person, version);
-    }
-
-    @Override
-    public String toString() {
-        return "Address{" +
-                "id=" + id +
-                ", city='" + city + '\'' +
-                ", street='" + street + '\'' +
-                ", hausNummer=" + hausNummer +
-                ", fitnessClub=" + fitnessClub +
-                ", person=" + person +
-                ", version=" + version +
-                '}';
-    }
 }
