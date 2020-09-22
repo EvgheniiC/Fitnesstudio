@@ -1,6 +1,7 @@
 package com.evghenii.fitnesstudio.service;
 
-import com.evghenii.fitnesstudio.domain.Email;
+import com.evghenii.fitnesstudio.domain.Program;
 
-public interface EmailService extends CRUDService<Email> {
+public interface EmailService {
+    void send(Program program);
 }
