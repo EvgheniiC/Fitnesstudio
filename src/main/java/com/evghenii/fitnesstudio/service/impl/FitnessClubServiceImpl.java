@@ -3,8 +3,6 @@ package com.evghenii.fitnesstudio.service.impl;
 import com.evghenii.fitnesstudio.domain.FitnessClub;
 import com.evghenii.fitnesstudio.repository.FitnessClubRepository;
 import com.evghenii.fitnesstudio.service.FitnessClubService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -23,10 +21,6 @@ public class FitnessClubServiceImpl implements FitnessClubService {
         fitnessClubRepository.save(fitnessClub);
     }
 
-    @Override
-    public void update(FitnessClub fitnessClub) {
-
-    }
 
     @Override
     public void deleteById(int id) {
@@ -36,5 +30,20 @@ public class FitnessClubServiceImpl implements FitnessClubService {
     @Override
     public List<FitnessClub> findAll() {
         return fitnessClubRepository.findAll();
+    }
+
+    @Override
+    public FitnessClub findByName(String name) {
+        return fitnessClubRepository.findByName(name);
+    }
+
+    @Override
+    public FitnessClub findById(int id) {
+        return fitnessClubRepository.findById(id);
+    }
+
+    @Override
+    public boolean existsByName(String name) {
+        return fitnessClubRepository.existsByName(name);
     }
 }

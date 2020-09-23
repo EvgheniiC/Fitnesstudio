@@ -4,7 +4,6 @@ import com.evghenii.fitnesstudio.domain.Address;
 import com.evghenii.fitnesstudio.domain.Person;
 import com.evghenii.fitnesstudio.domain.Phone;
 import com.evghenii.fitnesstudio.domain.Program;
-import jdk.packager.internal.legacy.ModuleManager;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
