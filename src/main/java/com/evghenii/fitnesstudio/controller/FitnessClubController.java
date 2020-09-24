@@ -24,7 +24,7 @@ public class FitnessClubController {
         fitnessClubService.deleteById(id);
     }
 
-    @GetMapping(value = "/fitnessclubs{fitnessclubId}")
+    @GetMapping(value = "/fitnessclubs/{fitnessclubId}")
     public FitnessClub findFitnessClubById(@PathVariable("fitnessclubId") int id) {
         return fitnessClubService.findById(id);
     }

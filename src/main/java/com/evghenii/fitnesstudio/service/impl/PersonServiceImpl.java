@@ -22,9 +22,9 @@ public class PersonServiceImpl implements PersonService {
 
     @Override
     public void save(Person person) {
-        person.getEmails().forEach(e -> e.setPerson(person));
-        person.getPhones().forEach(e -> e.setPerson(person));
-        person.getAddress().setPerson(person);
+    //   person.getEmails().forEach(e -> e.setPerson(person));
+      /*  person.getPhones().forEach(e -> e.setPerson(person));
+         person.getAddress().setPerson(person);*/
         personRepository.save(person);
     }
 
@@ -66,5 +66,10 @@ public class PersonServiceImpl implements PersonService {
     @Override
     public void deleteByAddress(Address address) {
         personRepository.deleteByAddress(address);
+    }
+
+    @Override
+    public List<Person> findByCity(String city) {
+        return personRepository.findByCity(city);
     }
 }

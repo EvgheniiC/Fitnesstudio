@@ -1,5 +1,6 @@
 package com.evghenii.fitnesstudio.domain;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -9,11 +10,11 @@ import java.util.Objects;
 
 @Document
 @Data
+@AllArgsConstructor
 public class Address {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "address_id")
     private int id;
 
     private String city;
@@ -22,17 +23,11 @@ public class Address {
 
     private int hausNummer;
 
-    @OneToOne(mappedBy = "address", fetch = FetchType.LAZY)
     private FitnessClub fitnessClub;
 
-    @OneToOne(mappedBy = "address", fetch = FetchType.LAZY)
-    @Positive
     private Person person;
 
     @Version
     private int version;
-
-    public Address() {
-    }
 
 }

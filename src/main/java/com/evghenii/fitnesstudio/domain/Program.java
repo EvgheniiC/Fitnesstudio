@@ -1,5 +1,6 @@
 package com.evghenii.fitnesstudio.domain;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -9,11 +10,11 @@ import java.util.Objects;
 
 @Document
 @Data
+@AllArgsConstructor
 public class Program {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "program_id")
     private int id;
 
     private String name;
@@ -35,6 +36,4 @@ public class Program {
     @Version
     private int version;
 
-    public Program() {
-    }
 }

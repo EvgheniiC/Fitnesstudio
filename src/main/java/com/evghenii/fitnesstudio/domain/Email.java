@@ -1,5 +1,6 @@
 package com.evghenii.fitnesstudio.domain;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -10,6 +11,7 @@ import java.util.Objects;
 
 @Document
 @Data
+@AllArgsConstructor
 public class Email {
 
     @Id
@@ -21,18 +23,11 @@ public class Email {
     @NotNull(message = "Email cannot be null")
     private String email;
 
-    @ManyToOne(optional = false)
-    @JoinColumn(name = "fitnessclub_fk_id")
     private FitnessClub fitnessClub;
 
-    @ManyToOne(optional = false)
-    @JoinColumn(name = "person_fk_id")
     private Person person;
 
     @Version
     private int version;
-
-    public Email() {
-    }
 
 }

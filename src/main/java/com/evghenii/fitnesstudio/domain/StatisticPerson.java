@@ -1,6 +1,7 @@
 package com.evghenii.fitnesstudio.domain;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -10,11 +11,11 @@ import java.util.Objects;
 
 @Document
 @Data
+@AllArgsConstructor
 public class StatisticPerson {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "statisticperson_id")
     private int id;
 
     private double actualWeight;
@@ -24,11 +25,6 @@ public class StatisticPerson {
 
     private int countOfVisits;
 
-    @ManyToOne(optional = false)
-    @JoinColumn(name = "person_fk_id")
     private Person person;
-
-    public StatisticPerson() {
-    }
 
 }

@@ -1,15 +1,16 @@
 package com.evghenii.fitnesstudio.domain;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import javax.persistence.*;
 import java.util.HashSet;
-import java.util.Objects;
 import java.util.Set;
 
 @Document
 @Data
+@AllArgsConstructor
 public class FitnessClub {
 
     @Id

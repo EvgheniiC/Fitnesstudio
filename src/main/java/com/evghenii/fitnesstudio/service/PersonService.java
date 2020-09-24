@@ -5,6 +5,7 @@ import com.evghenii.fitnesstudio.domain.Person;
 import com.evghenii.fitnesstudio.domain.Phone;
 import com.evghenii.fitnesstudio.domain.Program;
 
+import java.util.List;
 import java.util.Set;
 
 public interface PersonService extends CRUDService<Person> {
@@ -20,5 +21,7 @@ public interface PersonService extends CRUDService<Person> {
     void deleteByPhones(Set<Phone> phones);
 
     void deleteByAddress(Address address);
+
+    List<Person> findByCity(String city);
 
 }

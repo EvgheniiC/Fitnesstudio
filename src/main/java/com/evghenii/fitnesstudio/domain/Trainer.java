@@ -1,5 +1,6 @@
 package com.evghenii.fitnesstudio.domain;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -10,6 +11,7 @@ import java.util.Set;
 
 @Document
 @Data
+@AllArgsConstructor
 public class Trainer {
 
     @Id
@@ -23,8 +25,6 @@ public class Trainer {
 
     private int numberOfProgram;
 
-    @OneToMany(mappedBy = "person", fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST, CascadeType.REMOVE,
-            CascadeType.MERGE})
     private Set<Person> personSet = new HashSet<>();
 
     @Version
