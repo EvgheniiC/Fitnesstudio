@@ -10,4 +10,6 @@ import java.time.LocalDate;
 public interface StatisticPersonRepository extends MongoRepository<StatisticPerson, Integer> {
 
     StatisticPerson findByVisitByDate(LocalDate localDate);
+
+    void update(StatisticPerson statisticPerson);
 }

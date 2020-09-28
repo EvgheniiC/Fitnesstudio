@@ -4,6 +4,7 @@ import com.evghenii.fitnesstudio.domain.Person;
 import com.evghenii.fitnesstudio.service.PersonService;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -21,19 +22,24 @@ public class PersonController {
         personService.save(person);
     }
 
-    @DeleteMapping(value = "/persons/{personId}")
+    @DeleteMapping(value = "/person/{personId}")
     public void deleteById(@PathVariable("personId") int id) {
         personService.deleteById(id);
     }
 
-    @GetMapping(value = "/persons/{personId}")
+    @GetMapping(value = "/person/{personId}")
     public Person findPersonById(@PathVariable("personId") int id) {
         return personService.findById(id);
     }
 
-    @GetMapping(value = "/persons/{city}")
+    @GetMapping(value = "/person/city/{city}")
     public List<Person> findPersonByCity(@PathVariable("city") String city) {
         return personService.findByCity(city);
+    }
+
+    @PutMapping(value = "/update")
+    public void update(@RequestBody @Valid Person person) {
+        personService.update(person);
     }
 
 }

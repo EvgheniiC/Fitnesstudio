@@ -2,10 +2,9 @@ package com.evghenii.fitnesstudio.controller;
 
 import com.evghenii.fitnesstudio.domain.StatisticPerson;
 import com.evghenii.fitnesstudio.service.StatisticPersonService;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
 
 @RestController
 @RequestMapping("statistic")
@@ -22,4 +21,8 @@ public class StatisticPersonController {
         statisticPersonService.save(statisticPerson);
     }
 
+    @PutMapping(value = "/update")
+    public void update(@RequestBody @Valid StatisticPerson statisticPerson) {
+        statisticPersonService.update(statisticPerson);
+    }
 }

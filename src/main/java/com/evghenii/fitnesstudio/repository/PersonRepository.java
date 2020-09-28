@@ -29,4 +29,6 @@ public interface PersonRepository extends MongoRepository<Person, Integer> {
     @Query("{'Address.city':?0}")
     List<Person> findByCity(String city);
 
+    void update(Person person);
+
 }

@@ -13,4 +13,6 @@ public interface FitnessClubRepository extends MongoRepository<FitnessClub, Inte
 
     boolean existsByName(String name);
 
+    void update(FitnessClub fitnessClub);
+
 }

@@ -8,5 +8,4 @@ import org.springframework.stereotype.Repository;
 public interface PhoneRepository extends MongoRepository<Phone, Integer> {
 
     Phone findByPhoneNumber(String phoneNumber);
-
 }

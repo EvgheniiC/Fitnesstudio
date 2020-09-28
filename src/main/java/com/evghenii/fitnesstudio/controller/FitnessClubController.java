@@ -4,6 +4,8 @@ import com.evghenii.fitnesstudio.domain.FitnessClub;
 import com.evghenii.fitnesstudio.service.FitnessClubService;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
+
 @RestController
 @RequestMapping("fitnessclub")
 public class FitnessClubController {
@@ -27,6 +29,11 @@ public class FitnessClubController {
     @GetMapping(value = "/fitnessclubs/{fitnessclubId}")
     public FitnessClub findFitnessClubById(@PathVariable("fitnessclubId") int id) {
         return fitnessClubService.findById(id);
+    }
+
+    @PutMapping(value = "/update")
+    public void update(@RequestBody @Valid FitnessClub fitnessClub) {
+        fitnessClubService.update(fitnessClub);
     }
 
 }

@@ -6,6 +6,10 @@ import com.evghenii.fitnesstudio.domain.Phone;
 import com.evghenii.fitnesstudio.domain.Program;
 import com.evghenii.fitnesstudio.repository.PersonRepository;
 import com.evghenii.fitnesstudio.service.PersonService;
+import org.springframework.data.mongodb.core.MongoOperations;
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Query;
+import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -16,13 +20,16 @@ public class PersonServiceImpl implements PersonService {
 
     private final PersonRepository personRepository;
 
-    public PersonServiceImpl(PersonRepository personRepository) {
+    private final MongoOperations mongoOperations;
+
+    public PersonServiceImpl(PersonRepository personRepository, MongoOperations mongoOperations) {
         this.personRepository = personRepository;
+        this.mongoOperations = mongoOperations;
     }
 
     @Override
     public void save(Person person) {
-    //   person.getEmails().forEach(e -> e.setPerson(person));
+        //   person.getEmails().forEach(e -> e.setPerson(person));
       /*  person.getPhones().forEach(e -> e.setPerson(person));
          person.getAddress().setPerson(person);*/
         personRepository.save(person);
@@ -71,5 +78,17 @@ public class PersonServiceImpl implements PersonService {
     @Override
     public List<Person> findByCity(String city) {
         return personRepository.findByCity(city);
+    }
+
+    @Override
+    public void update(Person person) {
+        Query query = new Query();
+        query.addCriteria(Criteria.where("id").is(person.getId()));
+        Update update = new Update();
+        update.set("name", person.getName());
+        update.set("height", person.getHeight());
+        update.set("weightActual", person.getWeightActual());
+        update.set("weightDesired", person.getWeightDesired());
+        mongoOperations.findAndModify(query, update, Person.class);
     }
 }

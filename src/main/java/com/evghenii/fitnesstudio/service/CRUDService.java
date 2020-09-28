@@ -8,4 +8,6 @@ public interface CRUDService<T> {
     void deleteById(int id);
 
     List<T> findAll();
+
+    void update(T t);
 }

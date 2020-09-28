@@ -12,4 +12,6 @@ public interface TrainerRepository extends MongoRepository<Trainer, Integer> {
     Trainer findById(int id);
 
     boolean existsByName(String name);
+
+    void update(Trainer trainer);
 }

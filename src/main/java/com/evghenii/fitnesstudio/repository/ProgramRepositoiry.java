@@ -20,4 +20,6 @@ public interface ProgramRepositoiry extends MongoRepository<Program, Integer> {
     Program findByPrice(BigDecimal price);
 
     void deleteProgramsById(Integer id);
+
+    void update(Program program);
 }

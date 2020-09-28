@@ -22,4 +22,6 @@ public interface AddressRepository extends MongoRepository<Address, Integer> {
 
     void deleteAddressByPerson(Person person);
 
+    void update(Address address);
+
 }
